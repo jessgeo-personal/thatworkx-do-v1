@@ -11,7 +11,7 @@ export default function ContactPage() {
     firstName: '',
     lastName: '',
     email: '',
-    mobilephone: '',
+    phone: '',
     company: '',
     country: '',
     lead_interest: 'aeo-tool',
@@ -69,7 +69,7 @@ export default function ContactPage() {
               { name: 'firstname', value: formData.firstName },
               { name: 'lastname', value: formData.lastName },
               { name: 'email', value: formData.email },
-              { name: 'mobilephone', value: formData.mobilephone },
+              { name: 'mobilephone', value: formData.phone },
               { name: 'company', value: formData.company },
               { name: 'lead_interest', value: formData.lead_interest },
               { name: 'message', value: formData.message },
@@ -84,7 +84,9 @@ export default function ContactPage() {
       )
 
       if (!response.ok) {
-        throw new Error('Form submission failed')
+        const errorData = await response.json()
+        console.error('HubSpot error:', errorData)
+        throw new Error(`Form submission failed: ${JSON.stringify(errorData)}`)
       }
 
       // Simulate API call
@@ -99,7 +101,7 @@ export default function ContactPage() {
           firstName: '',
           lastName: '',
           email: '',
-          mobilephone: '',
+          phone: '',
           company: '',
           country: '',
           lead_interest: 'aeo-tool',
@@ -225,13 +227,61 @@ export default function ContactPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        value={formData.mobilephone}
+                        value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
                         placeholder="+971 XX XXX XXXX"
                       />
+                    <div>
+                      <label htmlFor="country" className="block text-sm font-semibold mb-2">
+                        Country
+                      </label>
+                      <select
+                        id="country"
+                        name="country"
+                        value={formData.country}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
+                      >
+                        <option value="">Select your country</option>
+                        
+                        {/* GCC Countries */}
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Oman">Oman</option>
+                        
+                        {/* Other Middle East */}
+                        <option value="Egypt">Egypt</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Yemen">Yemen</option>
+                        
+                        {/* Africa */}
+                        <option value="South Africa">South Africa</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Ghana">Ghana</option>
+                        
+                        {/* Other Popular */}
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
-
+                  </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-semibold mb-2">
                         Company Name
@@ -253,7 +303,7 @@ export default function ContactPage() {
                     </label>
                     <select
                       id="interest"
-                      name="interest"
+                      name="lead_interest"
                       value={formData.lead_interest}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"

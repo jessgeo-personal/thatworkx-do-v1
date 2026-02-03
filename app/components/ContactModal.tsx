@@ -47,23 +47,32 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
     data.lead_interest = leadInterest
 
     try {
+       const fieldsToSubmit = [
+        { name: 'company', value: data.company },
+        { name: 'firstname', value: data.firstname },
+        { name: 'lastname', value: data.lastname },
+        { name: 'phone', value: data.phone },
+        { name: 'email', value: data.email },
+        { name: 'country', value: data.country },
+        { name: 'lead_interest', value: data.lead_interest }
+      ]
+      
+      console.log('=== HUBSPOT SUBMISSION DEBUG ===')
+      console.log('Form ID:', 'a94b26cf-86bd-416e-9dc1-dc834099694b')
+      console.log('Lead Interest:', leadInterest)
+      console.log('Fields being submitted:', fieldsToSubmit)
+      console.log('Fields with values:', fieldsToSubmit.filter(f => f.value))
+      console.log('Empty fields:', fieldsToSubmit.filter(f => !f.value))
+
       const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/146079438/6e8fc5e3-5f7d-4d50-a2ca-2603985f044a`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/146079438/a94b26cf-86bd-416e-9dc1-dc834099694b`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            fields: [
-              { name: 'company', value: data.company },
-              { name: 'firstname', value: data.firstname },
-              { name: 'lastname', value: data.lastname },
-              { name: 'phone', value: data.phone },
-              { name: 'email', value: data.email },
-              { name: 'country', value: data.country },
-              { name: 'lead_interest', value: data.lead_interest }
-            ],
+            fields: fieldsToSubmit,  // ← Use the variable instead of inline
             context: {
               pageUri: window.location.href,
               pageName: document.title
@@ -73,6 +82,7 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
       )
 
       if (response.ok) {
+        console.log('✅ HubSpot submission successful')
         setIsSuccess(true)
         
         // Download PDF if AEO-Whitepaper
@@ -98,7 +108,24 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
           onClose()
         }, 2000)
       } else {
-        throw new Error('Form submission failed')
+        // Enhanced error logging
+        const errorData = await response.json()
+        console.error('❌ HUBSPOT SUBMISSION FAILED')
+        console.error('Status:', response.status)
+        console.error('Full error response:', errorData)
+        
+        if (errorData.errors) {
+          console.error('=== FIELD ERRORS ===')
+          errorData.errors.forEach((error: any, index: number) => {
+            console.error(`Error ${index + 1}:`, {
+              message: error.message,
+              errorType: error.errorType,
+              field: error.errorTokens?.field || 'unknown'
+            })
+          })
+        }
+        
+        throw new Error(`Form submission failed: ${JSON.stringify(errorData)}`)
       }
     } catch (error) {
       console.error('Form submission error:', error)

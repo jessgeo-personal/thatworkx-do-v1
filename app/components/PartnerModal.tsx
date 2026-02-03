@@ -15,7 +15,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
     email: '',
     company: '',
     country:'',
-    mobilephone: '',
+    phone: '',
     expertise: 'aeo',
     message: ''
   })
@@ -30,7 +30,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
     try {
       // Submit to HubSpot
       const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_PARTNER_FORM_ID}`,
+        'https://api.hsforms.com/submissions/v3/integration/submit/146079438/e5bbbaed-aeeb-4d7e-a96b-46845da380e1',
         {
           method: 'POST',
           headers: {
@@ -41,7 +41,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
               { name: 'firstname', value: formData.name.split(' ')[0] },
               { name: 'lastname', value: formData.name.split(' ').slice(1).join(' ') || formData.name },
               { name: 'email', value: formData.email },
-              { name: 'mobilephone', value: formData.mobilephone },
+              { name: 'mobilephone', value: formData.phone },
               { name: 'company', value: formData.company },
               { name: 'country', value: formData.country },
               { name: 'expertise', value: formData.expertise },
@@ -167,7 +167,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
                       type="tel"
                       id="phone"
                       name="phone"
-                      value={formData.mobilephone}
+                      value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
                     />
