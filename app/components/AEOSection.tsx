@@ -71,14 +71,17 @@ export default function AEOSection() {
               >
                 Try Free Audit Now
               </a>
+              {/*
               <button
                 onClick={() => setModalOpen(true)}
                 className="btn-outline border-white text-white hover:bg-white hover:text-purple-900"
               >
                 Download Whitepaper
               </button>
+              */}
             </div>
           </div>
+          
 
           {/* Right Column - Stats/Benefits */}
           <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg">

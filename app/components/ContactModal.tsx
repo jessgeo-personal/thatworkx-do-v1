@@ -86,14 +86,14 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
         setIsSuccess(true)
         
         // Download PDF if AEO-Whitepaper
-        if (leadInterest === 'AEO-Whitepaper') {
-          const link = document.createElement('a')
-          link.href = '/pdfs/AEO-WhatItIs-v2-Jan2026.pdf'
-          link.download = 'AEO-WhatItIs-v2-Jan2026.pdf'
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-        }
+        //if (leadInterest === 'AEO-Whitepaper') {
+        //  const link = document.createElement('a')
+        //  link.href = '/pdfs/AEO-WhatItIs-v2-Jan2026.pdf'
+        //  link.download = 'AEO-WhatItIs-v2-Jan2026.pdf'
+        //  document.body.appendChild(link)
+        //  link.click()
+        //  document.body.removeChild(link)
+        //}
         
         // Track with GA4 if available
         if (typeof window !== 'undefined' && window.gtag) {
