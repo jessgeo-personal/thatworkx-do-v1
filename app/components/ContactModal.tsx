@@ -115,7 +115,7 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
         
         if (errorData.errors) {
           console.error('=== FIELD ERRORS ===')
-          errorData.errors.forEach((error: any, index: number) => {
+          errorData.errors.forEach((error: { message: string; errorType: string; errorTokens?: { field?: string } }, index: number) => {
             console.error(`Error ${index + 1}:`, {
               message: error.message,
               errorType: error.errorType,

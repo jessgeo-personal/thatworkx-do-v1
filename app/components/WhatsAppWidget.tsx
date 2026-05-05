@@ -3,8 +3,8 @@
 export default function WhatsAppWidget() {
   const handleWhatsAppClick = () => {
     // Track WhatsApp click in GA4
-    if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
-      (window as any).gtag('event', 'whatsapp_click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
         event_category: 'contact',
         event_label: 'WhatsApp Widget'
       })
