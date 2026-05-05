@@ -1,0 +1,21 @@
+{
+  "defaultMode": "plan",
+  "lifecycleHooks": {
+    "onSessionStart": [
+      "Check for root package.json",
+      "Verify Vitest/Jest installation",
+      "Run Environment Parity Audit"
+    ]
+  },
+  "toolAccess": {
+    "preventExecution": ["rm -rf *", "rm -rf /", "drop database"],
+    "requireApproval": ["npm install", "git push", "npm audit fix"]
+  },
+  "mcpServers": {
+
+  },
+  "envParity": {
+    "requiredFiles": [".env.example", ".env.dev", ".env.staging"],
+    "strictMode": true
+  }
+}
