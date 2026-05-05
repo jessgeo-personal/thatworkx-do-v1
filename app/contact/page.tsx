@@ -3,8 +3,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 // ADD THESE CONSTANTS HERE (after imports, before component)
-const HUBSPOT_PORTAL_ID = '146079438'  // Replace with actual Portal ID
-const HUBSPOT_FORM_ID = 'a94b26cf-86bd-416e-9dc1-dc834099694b'  // Replace with actual Form ID
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
+const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

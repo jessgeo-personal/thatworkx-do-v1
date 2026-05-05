@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 
 // ADD THESE CONSTANTS HERE (after imports, before interface)
-const HUBSPOT_PORTAL_ID = '146079438'  // Replace with actual Portal ID
-const HUBSPOT_TOOL_FORM_ID = '6e8fc5e3-5f7d-4d50-a2ca-2603985f044a'  // Replace with actual Form ID
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
+const HUBSPOT_TOOL_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_TOOL_FORM_ID
 
 interface ToolRequestModalProps {
   onClose: () => void

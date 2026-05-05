@@ -2,8 +2,8 @@
 import { useState } from 'react'
 
 // ADD THESE CONSTANTS HERE (after imports, before interface)
-const HUBSPOT_PORTAL_ID = '146079438'  // Replace with actual Portal ID
-const HUBSPOT_PARTNER_FORM_ID = 'e5bbbaed-aeeb-4d7e-a96b-46845da380e1'  // Replace with actual Form ID
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
+const HUBSPOT_PARTNER_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_PARTNER_FORM_ID
 
 interface PartnerModalProps {
   onClose: () => void
@@ -30,7 +30,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
     try {
       // Submit to HubSpot
       const response = await fetch(
-        'https://api.hsforms.com/submissions/v3/integration/submit/146079438/e5bbbaed-aeeb-4d7e-a96b-46845da380e1',
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_PARTNER_FORM_ID}`,
         {
           method: 'POST',
           headers: {
