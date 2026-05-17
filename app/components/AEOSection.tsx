@@ -1,20 +1,32 @@
-'use client'
-import { useState } from 'react'
 import Image from 'next/image'
-import ContactModal from './ContactModal'
+import AEOModalTrigger from './AEOModalTrigger'
 
 export default function AEOSection() {
-  const [modalOpen, setModalOpen] = useState(false)
+  const aeoServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AIOptimize",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "provider": {
+      "@type": "Organization",
+      "name": "Thatworkx Solutions"
+    },
+    "description": "AI Engine Optimization (AEO) tools and services globally available to make websites discoverable by AI search engines and chatbots.",
+    "areaServed": "Global",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "description": "Subscription-based pricing model available globally."
+    }
+  }
 
   return (
-    <>
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        leadInterest="AEO-Whitepaper"
-        productName="AI Engine Optimization"
-      />
     <section id="solutions" className="section-padding bg-gradient-to-br from-blue-900 to-purple-900 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aeoServiceSchema) }}
+      />
       <div className="container-custom max-w-6xl">
         {/* Header with Logo */}
         <div className="mb-12">
@@ -71,14 +83,9 @@ export default function AEOSection() {
               >
                 Try Free Audit Now
               </a>
-              {/*
-              <button
-                onClick={() => setModalOpen(true)}
-                className="btn-outline border-white text-white hover:bg-white hover:text-purple-900"
-              >
-                Download Whitepaper
-              </button>
-              */}
+              <AEOModalTrigger 
+                buttonText="Download Whitepaper" 
+              />
             </div>
           </div>
           
@@ -110,6 +117,5 @@ export default function AEOSection() {
         </div>
       </div>
     </section>
-    </>
   )
 }

@@ -1,8 +1,38 @@
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function RPostSection() {
+  const rpostResellerSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RPost Cybersecurity Solutions Reseller",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Thatworkx Solutions"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "RPost"
+    },
+    "description": "Official RPost Reseller providing RMail, RSign, RDocs, and RaptorAI enterprise-grade email security and e-signatures. We provide full regional support and consultations through video conferencing.",
+    "areaServed": [
+      { "@type": "Place", "name": "Middle East" },
+      { "@type": "Place", "name": "Africa" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": ["USD", "AED"],
+      "description": "Flexible billing options in USD and AED."
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "providesService": {
+        "@type": "Service",
+        "name": "Video Conferencing Consultations and Support"
+      }
+    }
+  }
+
   const products = [
     {
       logo: '/images/rpost/rmail-logo.png',
@@ -36,6 +66,10 @@ export default function RPostSection() {
 
   return (
     <section id="rpost" className="section-padding bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(rpostResellerSchema) }}
+      />
       <div className="container-custom">
         {/* Header with Logo */}
         <div className="mb-12">

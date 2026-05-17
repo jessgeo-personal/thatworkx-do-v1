@@ -1,14 +1,29 @@
-'use client'
-import { useState } from 'react'
 import Image from 'next/image'
-import ContactModal from './ContactModal'
+import CryptoModalTrigger from './CryptoModalTrigger'
 
 export default function CryptoMonkeySection() {
-  const [modalOpen, setModalOpen] = useState(false)
+  const cryptoMonkeySchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CryptoMonkey",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "All-in-one platform globally available for managing cryptocurrency portfolios with enterprise-grade security and self-custody. Multi-chain support and real-time tracking.",
+    "areaServed": "Global",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "priceCurrency": "USD"
+    }
+  }
 
   return (
     <>
       <section id="crypto" className="section-padding bg-green-700 border-t-4 border-black">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cryptoMonkeySchema) }}
+        />
         <div className="container-custom">
           {/* Header with Logo */}
           <div className="mb-12">
@@ -110,26 +125,15 @@ export default function CryptoMonkeySection() {
 
           {/* CTA Button */}
           <div className="text-center">
-            <button
-              onClick={() => setModalOpen(true)}
-              className="btn-primary bg-black hover:bg-gray-900 text-white text-lg px-8 py-4"
-            >
-              Get Notified When Available
-            </button>
+            <CryptoModalTrigger
+              buttonText="Get Notified When Available"
+            />
             <p className="text-sm text-white mt-4">
               Join our waitlist and get exclusive early access
             </p>
           </div>
         </div>
       </section>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        leadInterest="Cryptomonkey-Interest"
-        productName="CryptoMonkey"
-      />
     </>
   )
 }

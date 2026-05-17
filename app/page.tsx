@@ -5,8 +5,27 @@ import CryptoMonkeySection from './components/CryptoMonkeySection'
 import WhyThatworkxSection from './components/WhyThatworkxSection'
 
 export default function Home() {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Thatworkx Solutions L.L.C-FZ",
+    "image": "https://thatworkx.com/images/thatworkx-logo.png",
+    "url": "https://thatworkx.com",
+    "telephone": "+971529342175",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "description": "Technology company based in Dubai specializing in cybersecurity, AI optimization, and digital asset management."
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Hero Slider - 4 Slides */}
       <HomeHeroSlider />
 
