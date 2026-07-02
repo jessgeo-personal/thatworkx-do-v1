@@ -35,74 +35,75 @@ export default function AEOToolPage() {
   }
 
   return (
-    <>
+    <div className="bg-[#020617] text-white min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aeoSuiteSchema) }}
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-aeo-navy via-brand-black to-black text-white py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-900 opacity-10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+      <section className="bg-gradient-to-b from-[#0a1128] via-[#020617] to-[#020617] py-24 relative overflow-hidden">
+        {/* Glow Spheres */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0ea5e9] opacity-[0.07] rounded-full blur-3xl -mt-20"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#10b981] opacity-[0.05] rounded-full blur-3xl"></div>
         
         <div className="container-custom max-w-5xl text-center relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-white bg-opacity-10 px-4 py-1.5 rounded-full text-brand-gold text-sm font-semibold mb-6 border border-white border-opacity-10">
+          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-[#0ea5e9] text-sm font-semibold mb-6">
             <span>✨</span>
-            <span>Next-Gen Web Visibility</span>
+            <span>AEO Suite Visual Parity Enabled</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 tracking-tight leading-tight">
-            The Thatworkx <span className="text-brand-red">AEO</span> Suite
+            The Thatworkx <span className="text-[#0ea5e9]">AEO</span> Suite
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
+          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 font-light">
             If your website isn't optimized for AI, you're invisible to the next generation of search. Align your digital presence for ChatGPT, Claude, Gemini, and Perplexity.
           </p>
 
           {/* Quick Scan Input Redirect */}
-          <div className="max-w-2xl mx-auto bg-white bg-opacity-5 backdrop-blur-md p-2 rounded-2xl border border-white border-opacity-10 shadow-2xl mb-12">
+          <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-[0_0_50px_rgba(14,165,233,0.1)] mb-12">
             <ScanForm />
           </div>
         </div>
       </section>
 
       {/* The Three Pillars Section */}
-      <section className="py-20 bg-gray-50 text-brand-black">
+      <section className="py-20 bg-[#020617] border-t border-white/5">
         <div className="container-custom max-w-6xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
               Three Pillars of AI Search Optimization
             </h2>
-            <p className="text-lg text-brand-gray-dark">
+            <p className="text-lg text-gray-400">
               Traditional SEO targets keywords and click-through rates. AEO is about structuring context, identity, and trust so AI answer engines can digest and cite your website.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1: AI Visualize */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl transition-transform hover:-translate-y-2 duration-300 flex flex-col justify-between">
+            {/* Card 1: AI Visualize (Sky Blue) */}
+            <div className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0ea5e9]/40 shadow-xl transition-all hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl font-bold mb-6">
+                <div className="w-14 h-14 bg-[#0ea5e9]/10 rounded-2xl flex items-center justify-center text-[#0ea5e9] text-2xl font-bold mb-6">
                   👁️
                 </div>
-                <h3 className="text-2xl font-bold mb-3 font-heading text-brand-black">
+                <h3 className="text-2xl font-bold mb-3 font-heading text-white">
                   AI Visualize
                 </h3>
-                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-green-100 text-green-800 mb-4">
-                  The Mirror (Free)
+                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-[#0ea5e9]/10 text-[#0ea5e9] mb-4 border border-[#0ea5e9]/20">
+                  The Mirror (Free Tier)
                 </span>
-                <p className="text-brand-gray-dark mb-6">
+                <p className="text-gray-400 mb-6">
                   Exposes exactly what LLM crawlers and scrapers see when they visit your site. It performs zero-overhead, lightweight checks on your site structure, robots.txt, llms.txt, and markdown maps.
                 </p>
-                <ul className="space-y-2.5 text-sm text-brand-gray-dark mb-8">
+                <ul className="space-y-2.5 text-sm text-gray-400 mb-8">
                   <li className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span> Raw text extraction audit
+                    <span className="text-[#0ea5e9] mr-2">✓</span> Raw text extraction audit
                   </li>
                   <li className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span> Robots.txt directive scanner
+                    <span className="text-[#0ea5e9] mr-2">✓</span> Robots.txt directive scanner
                   </li>
                   <li className="flex items-center">
-                    <span className="text-green-500 mr-2">✓</span> LLMs.txt & markdown context parser
+                    <span className="text-[#0ea5e9] mr-2">✓</span> LLMs.txt & markdown context parser
                   </li>
                 </ul>
               </div>
@@ -111,39 +112,36 @@ export default function AEOToolPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="btn-trigger-visualize"
-                className="w-full text-center py-3 bg-brand-black text-white hover:bg-brand-gray-dark font-semibold rounded-xl transition-colors"
+                className="w-full text-center py-3 bg-[#0ea5e9] text-white hover:bg-sky-600 font-semibold rounded-xl transition-colors shadow-lg shadow-sky-500/10"
               >
                 Launch AI Visualize
               </a>
             </div>
 
-            {/* Card 2: AIOptimize */}
-            <div className="bg-white rounded-2xl p-8 border-2 border-brand-red shadow-xl relative transition-transform hover:-translate-y-2 duration-300 flex flex-col justify-between overflow-hidden">
-              <div className="absolute top-0 right-0 bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-bl-lg">
-                Popular
-              </div>
+            {/* Card 2: AIOptimize (Emerald Green) */}
+            <div className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#10b981]/40 shadow-xl transition-all hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-brand-red text-2xl font-bold mb-6">
+                <div className="w-14 h-14 bg-[#10b981]/10 rounded-2xl flex items-center justify-center text-[#10b981] text-2xl font-bold mb-6">
                   🩺
                 </div>
-                <h3 className="text-2xl font-bold mb-3 font-heading text-brand-black">
+                <h3 className="text-2xl font-bold mb-3 font-heading text-white">
                   AIOptimize
                 </h3>
-                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-brand-red bg-opacity-10 text-brand-red mb-4">
+                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-[#10b981]/10 text-[#10b981] mb-4 border border-[#10b981]/20">
                   The Doctor (Premium)
                 </span>
-                <p className="text-brand-gray-dark mb-6">
+                <p className="text-gray-400 mb-6">
                   A premium technical engine that uses headless browsers (Puppeteer/Playwright) to identify rendering roadblocks. It validates schema markup (JSON-LD), SSR configuration, and critical E-E-A-T score metrics.
                 </p>
-                <ul className="space-y-2.5 text-sm text-brand-gray-dark mb-8">
+                <ul className="space-y-2.5 text-sm text-gray-400 mb-8">
                   <li className="flex items-center">
-                    <span className="text-brand-red mr-2">✓</span> Headless browser rendering audit
+                    <span className="text-[#10b981] mr-2">✓</span> Headless browser rendering audit
                   </li>
                   <li className="flex items-center">
-                    <span className="text-brand-red mr-2">✓</span> JSON-LD schema depth validation
+                    <span className="text-[#10b981] mr-2">✓</span> JSON-LD schema depth validation
                   </li>
                   <li className="flex items-center">
-                    <span className="text-brand-red mr-2">✓</span> Experience & E-E-A-T scoring
+                    <span className="text-[#10b981] mr-2">✓</span> Experience & E-E-A-T scoring
                   </li>
                 </ul>
               </div>
@@ -152,36 +150,36 @@ export default function AEOToolPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="btn-trigger-optimize"
-                className="w-full text-center py-3 bg-brand-red text-white hover:bg-red-700 font-semibold rounded-xl transition-colors"
+                className="w-full text-center py-3 bg-[#10b981] text-white hover:bg-emerald-600 font-semibold rounded-xl transition-colors shadow-lg shadow-emerald-500/10"
               >
                 Launch AIOptimize
               </a>
             </div>
 
-            {/* Card 3: AISocialize */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl transition-transform hover:-translate-y-2 duration-300 flex flex-col justify-between">
+            {/* Card 3: AISocialize (Rose Red) */}
+            <div className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#f43f5e]/40 shadow-xl transition-all hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl font-bold mb-6">
+                <div className="w-14 h-14 bg-[#f43f5e]/10 rounded-2xl flex items-center justify-center text-[#f43f5e] text-2xl font-bold mb-6">
                   🌐
                 </div>
-                <h3 className="text-2xl font-bold mb-3 font-heading text-brand-black">
+                <h3 className="text-2xl font-bold mb-3 font-heading text-white">
                   AISocialize
                 </h3>
-                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-purple-100 text-purple-800 mb-4">
+                <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-[#f43f5e]/10 text-[#f43f5e] mb-4 border border-[#f43f5e]/20">
                   Brand Sync (Coming Soon)
                 </span>
-                <p className="text-brand-gray-dark mb-6">
+                <p className="text-gray-400 mb-6">
                   Tracks and harmonizes your off-page brand mentions. It scans third-party articles, public discussions, and reviews across authority sites to ensure AI engines synthesize a consistent, positive narrative.
                 </p>
-                <ul className="space-y-2.5 text-sm text-brand-gray-dark mb-8">
+                <ul className="space-y-2.5 text-sm text-gray-400 mb-8">
                   <li className="flex items-center">
-                    <span className="text-purple-500 mr-2">✓</span> Brand sentiment & mention mapping
+                    <span className="text-[#f43f5e] mr-2">✓</span> Brand sentiment & mention mapping
                   </li>
                   <li className="flex items-center">
-                    <span className="text-purple-500 mr-2">✓</span> Off-page authority graph analysis
+                    <span className="text-[#f43f5e] mr-2">✓</span> Off-page authority graph analysis
                   </li>
                   <li className="flex items-center">
-                    <span className="text-purple-500 mr-2">✓</span> Entity association synthesis
+                    <span className="text-[#f43f5e] mr-2">✓</span> Entity association synthesis
                   </li>
                 </ul>
               </div>
@@ -190,7 +188,7 @@ export default function AEOToolPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="btn-trigger-socialize"
-                className="w-full text-center py-3 bg-gray-200 hover:bg-gray-300 text-brand-black font-semibold rounded-xl transition-colors"
+                className="w-full text-center py-3 bg-[#f43f5e] text-white hover:bg-rose-600 font-semibold rounded-xl transition-colors shadow-lg shadow-rose-500/10"
               >
                 Launch AISocialize
               </a>
@@ -200,8 +198,9 @@ export default function AEOToolPage() {
       </section>
 
       {/* Why AEO is Critical Section */}
-      <section className="py-20 bg-brand-black text-white relative">
-        <div className="container-custom max-w-5xl">
+      <section className="py-20 bg-[#070b19] text-white border-t border-white/5 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent pointer-events-none"></div>
+        <div className="container-custom max-w-5xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
@@ -220,43 +219,43 @@ export default function AEOToolPage() {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-aeo-navy to-purple-950 p-8 rounded-2xl border border-white border-opacity-10 shadow-2xl">
+            <div className="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
               <h3 className="text-xl font-bold mb-6 text-brand-gold">AEO Audit Key Metrics</h3>
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between text-sm mb-1 text-gray-300">
                     <span>Technical Foundation & Schema</span>
-                    <span className="font-bold">20%</span>
+                    <span className="font-bold text-[#0ea5e9]">20%</span>
                   </div>
-                  <div className="w-full bg-black bg-opacity-50 h-2 rounded-full overflow-hidden">
-                    <div className="bg-brand-gold h-full rounded-full" style={{ width: '20%' }}></div>
+                  <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#0ea5e9] h-full rounded-full" style={{ width: '20%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1 text-gray-300">
-                    <span>Crawlability (Robots.txt & Markdown)</span>
-                    <span className="font-bold">20%</span>
+                    <span>Crawlability (Robots & MD)</span>
+                    <span className="font-bold text-[#10b981]">20%</span>
                   </div>
-                  <div className="w-full bg-black bg-opacity-50 h-2 rounded-full overflow-hidden">
-                    <div className="bg-brand-red h-full rounded-full" style={{ width: '20%' }}></div>
+                  <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#10b981] h-full rounded-full" style={{ width: '20%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1 text-gray-300">
                     <span>Clarity & Content Structure</span>
-                    <span className="font-bold">30%</span>
+                    <span className="font-bold text-purple-400">30%</span>
                   </div>
-                  <div className="w-full bg-black bg-opacity-50 h-2 rounded-full overflow-hidden">
+                  <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden">
                     <div className="bg-purple-500 h-full rounded-full" style={{ width: '30%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1 text-gray-300">
-                    <span>Trustworthiness (E-E-A-T Score)</span>
-                    <span className="font-bold">30%</span>
+                    <span>Trustworthiness (E-E-A-T)</span>
+                    <span className="font-bold text-[#f43f5e]">30%</span>
                   </div>
-                  <div className="w-full bg-black bg-opacity-50 h-2 rounded-full overflow-hidden">
-                    <div className="bg-blue-400 h-full rounded-full" style={{ width: '30%' }}></div>
+                  <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#f43f5e] h-full rounded-full" style={{ width: '30%' }}></div>
                   </div>
                 </div>
               </div>
@@ -265,7 +264,7 @@ export default function AEOToolPage() {
                   href="https://aeo.thatworkx.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-black hover:bg-gray-100 font-bold rounded-xl transition-all"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#0ea5e9] text-white hover:bg-sky-600 font-bold rounded-xl transition-all shadow-lg shadow-sky-500/20"
                 >
                   Start Scanning Your Site
                 </a>
@@ -274,6 +273,6 @@ export default function AEOToolPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

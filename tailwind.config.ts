@@ -25,6 +25,9 @@ const config: Config = {
         aeo: {
           navy: '#0A1628',
           cyan: '#00D9FF',
+          visualize: '#0ea5e9', // Sky Blue
+          optimize: '#10b981',  // Emerald Green
+          socialize: '#f43f5e', // Rose Red
         },
         // RPost colors
         rpost: {
