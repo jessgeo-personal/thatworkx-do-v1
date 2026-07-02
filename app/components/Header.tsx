@@ -29,9 +29,9 @@ export default function Header() {
             <Link href="/cybersecurity" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               Cybersecurity
             </Link>
-            <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="text-brand-black hover:text-brand-red transition-colors font-medium">
+            <Link href="/aeo-tool" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
-            </a>
+            </Link>
             <Link href="/contact" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               Contact Us
             </Link>
@@ -45,9 +45,9 @@ export default function Header() {
               Partner With Us
             </button>
             {pathname !== '/cybersecurity' && (
-              <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <Link href="/aeo-tool" className="btn-primary">
                 Try Free AEO Audit
-              </a>
+              </Link>
             )}
           </div>
 
@@ -76,15 +76,15 @@ export default function Header() {
             <Link href="/cybersecurity" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               Cybersecurity
             </Link>
-            <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
+            <Link href="/aeo-tool" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
-            </a>
+            </Link>
             <Link href="/contact" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               Contact Us
             </Link>
-            <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="btn-primary inline-block">
+            <Link href="/aeo-tool" className="btn-primary inline-block">
               Try Free AEO Audit
-            </a>
+            </Link>
           </div>
         )}
       </nav>

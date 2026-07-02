@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import AEOModalTrigger from './AEOModalTrigger'
 
 export default function AEOSection() {
@@ -75,14 +76,12 @@ export default function AEOSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://aeo.thatworkx.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary bg-brand-gold text-black hover:bg-yellow-500"
+              <Link
+                href="/aeo-tool"
+                className="btn-primary bg-brand-gold text-black hover:bg-yellow-500 text-center"
               >
                 Try Free Audit Now
-              </a>
+              </Link>
               <AEOModalTrigger 
                 buttonText="Download Whitepaper" 
               />

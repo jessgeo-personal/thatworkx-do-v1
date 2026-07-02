@@ -425,9 +425,9 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold mb-6 relative z-10">Helpful Resources</h3>
                 <ul className="space-y-4 relative z-10">
                   <li>
-                    <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-brand-gold transition-colors">
+                    <Link href="/aeo-tool" className="flex items-center text-gray-300 hover:text-brand-gold transition-colors">
                       <span className="mr-2">→</span> Free AEO Audit Tool
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link href="/cybersecurity" className="flex items-center text-gray-300 hover:text-brand-gold transition-colors">

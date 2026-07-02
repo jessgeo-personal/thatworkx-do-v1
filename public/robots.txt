@@ -66,4 +66,4 @@ Allow: /ai-context.md
 User-agent: AI-OptimizeBot
 Allow: /
 
-Sitemap: https://aeo.thatworkx.com/sitemap.xml
+Sitemap: https://thatworkx.com/sitemap.xml

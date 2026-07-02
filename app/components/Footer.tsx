@@ -30,9 +30,9 @@ export default function Footer() {
             <h4 className="font-bold mb-4 text-brand-gold">Solutions</h4>
             <ul className="space-y-2 text-brand-gray-light">
               <li>
-                <a href="https://aeo.thatworkx.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <Link href="/aeo-tool" className="hover:text-white transition-colors">
                   AEO Tool
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/cybersecurity" className="hover:text-white transition-colors">
