@@ -1,9 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
-export default function HeroSlider() {
+interface HeroSliderProps {
+  openContactModal: (leadInterest: 'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me' | 'General-Contact-Me', productName: string) => void
+}
+
+export default function HeroSlider({ openContactModal }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const slides = [
@@ -22,6 +25,8 @@ export default function HeroSlider() {
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
       cta2: 'Download Brochure',
       cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
+      leadInterest: 'General-Contact-Me' as const,
+      productName: 'RPost Security',
       bgColor: 'bg-black'
     },
     {
@@ -51,6 +56,8 @@ export default function HeroSlider() {
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
       cta2: 'Download Brochure',
       cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
+      leadInterest: 'Rmail-Contact-Me' as const,
+      productName: 'RMail',
       bgColor: 'bg-black'
     },
     {
@@ -80,6 +87,8 @@ export default function HeroSlider() {
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
       cta2: 'Download Brochure',
       cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
+      leadInterest: 'Rsign-Contact-Me' as const,
+      productName: 'RSign',
       bgColor: 'bg-black'
     },
     {
@@ -109,6 +118,8 @@ export default function HeroSlider() {
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
       cta2: 'Download Brochure',
       cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
+      leadInterest: 'RDocs-Contact-Me' as const,
+      productName: 'RDocs',
       bgColor: 'bg-black'
     },
     {
@@ -138,6 +149,8 @@ export default function HeroSlider() {
       cta1Link: '/contact',
       cta2: 'Download Brochure',
       cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
+      leadInterest: 'Raptor-Contact-Me' as const,
+      productName: 'Raptor™AI',
       bgColor: 'bg-gradient-to-br from-rpost-darkRed to-rpost-red'
     },
     {
@@ -160,6 +173,8 @@ export default function HeroSlider() {
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
       cta2: 'Contact Sales',
       cta2Link: '/contact',
+      leadInterest: 'General-Contact-Me' as const,
+      productName: 'RPost Security',
       bgColor: 'bg-black'
     }
   ]
@@ -174,6 +189,13 @@ export default function HeroSlider() {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
+  }
+
+  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, leadInterest?: any, productName?: string) => {
+    if (href === '/contact') {
+      e.preventDefault()
+      openContactModal(leadInterest || 'General-Contact-Me', productName || 'RPost Security')
+    }
   }
 
   const currentSlideData = slides[currentSlide]
@@ -244,14 +266,24 @@ export default function HeroSlider() {
                     href={currentSlideData.cta1Link}
                     target={currentSlideData.cta1Link.startsWith('http') ? "_blank" : undefined}
                     rel={currentSlideData.cta1Link.startsWith('http') ? "noopener noreferrer" : undefined}
+                    onClick={(e) => handleCtaClick(e, currentSlideData.cta1Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
                     className="btn-primary bg-white text-rpost-red hover:bg-gray-100 text-center"
                   >
                     {currentSlideData.cta1}
                   </a>
+
+                  {currentSlideData.cta1 !== 'Contact Sales' && currentSlideData.cta2 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
+                    <button
+                      onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
+                      className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
+                    >
+                      Contact Sales
+                    </button>
+                  )}
+
                   <a
                     href={currentSlideData.cta2Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={(e) => handleCtaClick(e, currentSlideData.cta2Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
                     className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
                   >
                     {currentSlideData.cta2}
@@ -292,10 +324,20 @@ export default function HeroSlider() {
                   href={currentSlideData.cta1Link}
                   target={currentSlideData.cta1Link.startsWith('http') ? "_blank" : undefined}
                   rel={currentSlideData.cta1Link.startsWith('http') ? "noopener noreferrer" : undefined}
+                  onClick={(e) => handleCtaClick(e, currentSlideData.cta1Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
                   className="btn-primary bg-white text-rpost-red hover:bg-gray-100"
                 >
                   {currentSlideData.cta1}
                 </a>
+
+                {currentSlideData.cta1 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
+                  <button
+                    onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
+                    className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
+                  >
+                    Contact Sales
+                  </button>
+                )}
               </div>
             </div>
           </>
@@ -349,12 +391,13 @@ export default function HeroSlider() {
                   >
                     {currentSlideData.cta1}
                   </a>
-                  <Link
+                  <a
                     href={currentSlideData.cta2Link}
+                    onClick={(e) => handleCtaClick(e, currentSlideData.cta2Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
                     className="btn-outline border-white text-white hover:bg-white hover:text-black text-center"
                   >
                     {currentSlideData.cta2}
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -393,6 +436,15 @@ export default function HeroSlider() {
                 >
                   {currentSlideData.cta1}
                 </a>
+
+                {currentSlideData.cta1 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
+                  <button
+                    onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
+                    className="btn-outline border-white text-white hover:bg-white hover:text-brand-gold text-center"
+                  >
+                    Contact Sales
+                  </button>
+                )}
               </div>
             </div>
           </>

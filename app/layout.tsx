@@ -4,6 +4,7 @@ import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppWidget from './components/WhatsAppWidget'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -238,33 +239,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* TODO: Add Google Analytics 4 when ready */}
-        
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4TSP156XLZ"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-4TSP156XLZ');
-            `,
-          }}
-        />
-
-        {/* TODO: Add HubSpot Tracking Code when ready */}
-        
-        <script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="//js-eu1.hs-scripts.com/146079438.js"
-        />
-        
       </head>
       <body className={inter.className}>
         <Header />
@@ -273,6 +247,28 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppWidget />
+
+        {/* Google Analytics 4 */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4TSP156XLZ"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4TSP156XLZ');
+          `}
+        </Script>
+
+        {/* HubSpot Tracking Code */}
+        <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          strategy="afterInteractive"
+          src="//js-eu1.hs-scripts.com/146079438.js"
+        />
       </body>
     </html>
   )

@@ -1,16 +1,28 @@
+'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import HeroSlider from './HeroSlider'
 import ComparisonSection from './ComparisonSection'
 import RaptorAICTA from './RaptorAICTA'
+import ContactModal from '../components/ContactModal'
 
 export default function CybersecurityPage() {
+  const [modalOpen, setModalOpen] = useState(false)
+  const [modalLeadInterest, setModalLeadInterest] = useState<'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me' | 'General-Contact-Me'>('General-Contact-Me')
+  const [modalProductName, setModalProductName] = useState('')
+
+  const openContactModal = (leadInterest: typeof modalLeadInterest, productName: string) => {
+    setModalLeadInterest(leadInterest)
+    setModalProductName(productName)
+    setModalOpen(true)
+  }
   return (
     <>
       {/* Hero Slider - Updated 2-column layout */}
-      <HeroSlider />
+      <HeroSlider openContactModal={openContactModal} />
 
       {/* Comparison Section - With logos and demo buttons */}
-      <ComparisonSection />
+      <ComparisonSection openContactModal={openContactModal} />
 
       {/* Featured Product: RaptorAI */}
       <section className="section-padding bg-gradient-to-br from-rpost-darkRed to-rpost-red text-white">
@@ -83,7 +95,7 @@ export default function CybersecurityPage() {
             </div>
           </div>
 
-          <RaptorAICTA />
+          <RaptorAICTA openContactModal={openContactModal} />
         </div>
       </section>
 
@@ -346,9 +358,12 @@ export default function CybersecurityPage() {
               >
                 Book Demo with Thatworkx
               </a>
-              <Link href="/contact" className="btn-outline border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black">
+              <button 
+                onClick={() => openContactModal('General-Contact-Me', 'RPost Security')}
+                className="btn-outline border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black"
+              >
                 Contact Sales Team
-              </Link>
+              </button>
             </div>
 
             <div className="text-sm text-gray-400">
@@ -437,6 +452,13 @@ export default function CybersecurityPage() {
           </div>
         </div>
       </section>
+
+      <ContactModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        leadInterest={modalLeadInterest}
+        productName={modalProductName}
+      />
     </>
   )
 }

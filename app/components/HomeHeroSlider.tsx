@@ -85,12 +85,12 @@ export default function HomeHeroSlider() {
                   >
                     Find out for free in less than 30 seconds
                   </a>
-                  <a
-                    href="#aeo"
+                  <Link
+                    href="/aeo"
                     className="btn-outline border-white text-white hover:bg-white hover:text-purple-900 text-center"
                   >
                     Explore AEO
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

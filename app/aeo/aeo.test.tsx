@@ -29,5 +29,13 @@ describe('AEO Tool Page', () => {
     expect(screen.getByRole('link', { name: /Launch AI Visualize/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Launch AIOptimize/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /Launch AISocialize/i })).toBeInTheDocument()
+
+    // Check newly added sections
+    expect(screen.getByRole('heading', { name: /Explore Our AEO Services/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Professional AEO Audit Reports/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Frequently Asked Questions/i })).toBeInTheDocument()
+
+    // Check sample report CTA
+    expect(screen.getByRole('link', { name: /View Sample Detailed Report/i })).toBeInTheDocument()
   })
 })

@@ -30,7 +30,7 @@ export default function Footer() {
             <h4 className="font-bold mb-4 text-brand-gold">Solutions</h4>
             <ul className="space-y-2 text-brand-gray-light">
               <li>
-                <Link href="/aeo-tool" className="hover:text-white transition-colors">
+                <Link href="/aeo" className="hover:text-white transition-colors">
                   AEO Tool
                 </Link>
               </li>

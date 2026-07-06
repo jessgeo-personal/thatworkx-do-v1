@@ -29,7 +29,7 @@ export default function Header() {
             <Link href="/cybersecurity" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               Cybersecurity
             </Link>
-            <Link href="/aeo-tool" className="text-brand-black hover:text-brand-red transition-colors font-medium">
+            <Link href="/aeo" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
             </Link>
             <Link href="/contact" className="text-brand-black hover:text-brand-red transition-colors font-medium">
@@ -44,11 +44,9 @@ export default function Header() {
             >
               Partner With Us
             </button>
-            {pathname !== '/cybersecurity' && (
-              <Link href="/aeo-tool" className="btn-primary">
-                Try Free AEO Audit
-              </Link>
-            )}
+            <Link href="/aeo" className="btn-primary">
+              Try Free AEO Audit
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -76,13 +74,13 @@ export default function Header() {
             <Link href="/cybersecurity" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               Cybersecurity
             </Link>
-            <Link href="/aeo-tool" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
+            <Link href="/aeo" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
             </Link>
             <Link href="/contact" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               Contact Us
             </Link>
-            <Link href="/aeo-tool" className="btn-primary inline-block">
+            <Link href="/aeo" className="btn-primary inline-block">
               Try Free AEO Audit
             </Link>
           </div>

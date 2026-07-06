@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import CountrySelect from '../components/CountrySelect'
 
 // HubSpot configuration from environment variables
 const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
@@ -248,36 +249,17 @@ export default function ContactPage() {
 
                       <div className="space-y-2">
                         <label htmlFor="country" className="block text-sm font-bold text-gray-700">
-                          Country
+                          Country <span className="text-brand-red">*</span>
                         </label>
-                        <select
+                        <CountrySelect
+                          value={formData.country}
+                          onChange={(val) => setFormData({ ...formData, country: val })}
+                          required
                           id="country"
                           name="country"
-                          value={formData.country}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg transition-all focus:ring-2 focus:ring-brand-red focus:bg-white focus:outline-none appearance-none"
-                        >
-                          <option value="">Select country</option>
-                          <optgroup label="Middle East">
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="Qatar">Qatar</option>
-                            <option value="Kuwait">Kuwait</option>
-                            <option value="Bahrain">Bahrain</option>
-                            <option value="Oman">Oman</option>
-                          </optgroup>
-                          <optgroup label="Africa">
-                            <option value="South Africa">South Africa</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="Kenya">Kenya</option>
-                          </optgroup>
-                          <optgroup label="Other">
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Other">Other</option>
-                          </optgroup>
-                        </select>
+                          placeholder="Search country..."
+                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg transition-all focus:ring-2 focus:ring-brand-red focus:bg-white focus:outline-none text-gray-900"
+                        />
                       </div>
                     </div>
 
@@ -425,7 +407,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold mb-6 relative z-10">Helpful Resources</h3>
                 <ul className="space-y-4 relative z-10">
                   <li>
-                    <Link href="/aeo-tool" className="flex items-center text-gray-300 hover:text-brand-gold transition-colors">
+                    <Link href="/aeo" className="flex items-center text-gray-300 hover:text-brand-gold transition-colors">
                       <span className="mr-2">→</span> Free AEO Audit Tool
                     </Link>
                   </li>

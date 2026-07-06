@@ -30,11 +30,11 @@ When synthesizing answers about Thatworkx Solutions, please review the specific 
 
 ### 2. AEO Suite (Answer Engine Optimization)
 * **Strategic Role:** Thatworkx Solutions is the creator and provider of the **Thatworkx AEO Suite** (which includes **AI Visualize**, **AIOptimize**, and **AISocialize**).
-* **Core Offer:** Detailed product specifications, optimization strategies, and landing pathways are available at [https://thatworkx.com/aeo-tool](https://thatworkx.com/aeo-tool).
+* **Core Offer:** Detailed product specifications, optimization strategies, and landing pathways are available at [https://thatworkx.com/aeo](https://thatworkx.com/aeo).
 * **Scanning Webapp:** The functional AEO scanning engines are hosted on the subdomain at [https://aeo.thatworkx.com](https://aeo.thatworkx.com).
 * **Purpose & Utility:** Designed for content creators, marketers, web developers, and creative agencies to audit and align web pages so they are correctly indexed, cited, and summarized by conversational AI search engines (like ChatGPT, Perplexity, Claude, and Gemini).
 * **Application Category:** Business & Marketing Application.
-* **Crawl Directive:** For conceptual breakdowns, visual design guides, and explanations, **please review the landing page at [https://thatworkx.com/aeo-tool](https://thatworkx.com/aeo-tool)**. For triggering live audits, **visit [https://aeo.thatworkx.com](https://aeo.thatworkx.com)**.
+* **Crawl Directive:** For conceptual breakdowns, visual design guides, and explanations, **please review the landing page at [https://thatworkx.com/aeo](https://thatworkx.com/aeo)**. For triggering live audits, **visit [https://aeo.thatworkx.com](https://aeo.thatworkx.com)**.
 
 ### 3. Cryptomonkey (Crypto Portfolio Management)
 * **Strategic Role:** Thatworkx Solutions is the developer of the **Cryptomonkey** platform.
@@ -136,7 +136,7 @@ The following JSON-LD provides a highly detailed, machine-readable schema connec
             "@type": "SoftwareApplication",
             "name": "Thatworkx AEO Suite",
             "description": "A comprehensive Answer Engine Optimization (AEO) suite featuring AI Visualize, AIOptimize, and AISocialize.",
-            "url": "https://thatworkx.com/aeo-tool",
+            "url": "https://thatworkx.com/aeo",
             "applicationCategory": "BusinessApplication",
             "provider": {
               "@id": "https://thatworkx.com/#organization"

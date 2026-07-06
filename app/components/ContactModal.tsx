@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import CountrySelect from './CountrySelect'
 
 // TypeScript declaration for gtag
 declare global {
@@ -18,10 +19,12 @@ interface ContactModalProps {
 export default function ContactModal({ isOpen, onClose, leadInterest, productName }: ContactModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [country, setCountry] = useState('')
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
+      setCountry('')
     } else {
       document.body.style.overflow = 'unset'
     }
@@ -270,27 +273,15 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
                   <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
                     Country <span className="text-red-500">*</span>
                   </label>
-                  <select
+                  <CountrySelect
+                    value={country}
+                    onChange={setCountry}
+                    required
                     id="country"
                     name="country"
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rpost-red focus:border-transparent"
-                  >
-                    <option value="">Select your country</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Kuwait">Kuwait</option>
-                    <option value="Bahrain">Bahrain</option>
-                    <option value="Oman">Oman</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Lebanon">Lebanon</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="Kenya">Kenya</option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="Other">Other</option>
-                  </select>
+                    placeholder="Search and select your country..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rpost-red focus:border-transparent bg-white text-gray-900"
+                  />
                 </div>
 
                 {/* Submit Button */}

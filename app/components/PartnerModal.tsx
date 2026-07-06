@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import CountrySelect from './CountrySelect'
 
 // ADD THESE CONSTANTS HERE (after imports, before interface)
 const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID
@@ -174,26 +175,43 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="expertise" className="block text-sm font-semibold mb-2">
-                    Area of Expertise *
-                  </label>
-                  <select
-                    id="expertise"
-                    name="expertise"
-                    required
-                    value={formData.expertise}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
-                  >
-                    <option value="aeo">AEO & SEO Marketing</option>
-                    <option value="cybersecurity">Cybersecurity & RPost</option>
-                    <option value="martech">Marketing Technology</option>
-                    <option value="marops">Marketing Operations</option>
-                    <option value="crypto">Cryptocurrency & Blockchain</option>
-                    <option value="general">General Business Consulting</option>
-                    <option value="regional">Regional Partner (MENA)</option>
-                  </select>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="country" className="block text-sm font-semibold mb-2">
+                      Country *
+                    </label>
+                    <CountrySelect
+                      value={formData.country}
+                      onChange={(val) => setFormData({ ...formData, country: val })}
+                      required
+                      id="country"
+                      name="country"
+                      placeholder="Search country..."
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white text-gray-900"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="expertise" className="block text-sm font-semibold mb-2">
+                      Area of Expertise *
+                    </label>
+                    <select
+                      id="expertise"
+                      name="expertise"
+                      required
+                      value={formData.expertise}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent bg-white text-gray-900"
+                    >
+                      <option value="aeo">AEO & SEO Marketing</option>
+                      <option value="cybersecurity">Cybersecurity & RPost</option>
+                      <option value="martech">Marketing Technology</option>
+                      <option value="marops">Marketing Operations</option>
+                      <option value="crypto">Cryptocurrency & Blockchain</option>
+                      <option value="general">General Business Consulting</option>
+                      <option value="regional">Regional Partner (MENA)</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>

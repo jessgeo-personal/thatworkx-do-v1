@@ -77,7 +77,7 @@ export default function AEOSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/aeo-tool"
+                href="/aeo"
                 className="btn-primary bg-brand-gold text-black hover:bg-yellow-500 text-center"
               >
                 Try Free Audit Now

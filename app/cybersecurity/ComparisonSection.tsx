@@ -2,32 +2,24 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import ContactModal from '../components/ContactModal'
 
-export default function ComparisonSection() {
+interface ComparisonSectionProps {
+  openContactModal: (leadInterest: 'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me' | 'General-Contact-Me', productName: string) => void
+}
+
+export default function ComparisonSection({ openContactModal }: ComparisonSectionProps) {
   const [expandedComparison, setExpandedComparison] = useState<string | null>(null)
-  const [modalOpen, setModalOpen] = useState(false)
-  const [modalLeadInterest, setModalLeadInterest] = useState<'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me'>('Rmail-Contact-Me')
-  const [modalProductName, setModalProductName] = useState('')
 
   const toggleComparison = (product: string) => {
     setExpandedComparison(expandedComparison === product ? null : product)
   }
 
   const openModal = (leadInterest: 'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me', productName: string) => {
-    setModalLeadInterest(leadInterest)
-    setModalProductName(productName)
-    setModalOpen(true)
+    openContactModal(leadInterest, productName)
   }
 
   return (
     <>
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        leadInterest={modalLeadInterest}
-        productName={modalProductName}
-      />
     <section id="compare" className="section-padding bg-white">
       <div className="container-custom">
         <h2 className="text-4xl font-heading font-bold text-center mb-4">
