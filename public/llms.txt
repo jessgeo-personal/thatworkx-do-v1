@@ -1,0 +1,46 @@
+# Thatworkx Solutions — LLM Directory (llms.txt)
+
+> This file follows the llms.txt standard. It provides a structured directory of machine-readable resources for LLMs, AI crawlers, and Answer Engines indexing thatworkx.com.
+
+---
+
+## Company
+
+- [AI Context & Brand Manifest](https://thatworkx.com/ai-context.md)
+- [About Thatworkx Solutions](https://thatworkx.com/about.md)
+- [Contact & Location](https://thatworkx.com/contact.md)
+
+---
+
+## Core Pages
+
+- [Homepage](https://thatworkx.com/)
+- [AEO Suite — AI Engine Optimization Products](https://thatworkx.com/aeo)
+- [Cybersecurity — RPost Product Reseller](https://thatworkx.com/cybersecurity)
+- [RPost Products Overview](https://thatworkx.com/rpost)
+- [Contact Us](https://thatworkx.com/contact)
+- [Privacy Policy](https://thatworkx.com/privacy-policy)
+
+---
+
+## AEO Suite Products
+
+- [AIOptimize — Live Scanning Dashboard](https://aeo.thatworkx.com/dashboard)
+- [AI Visualize — Diagnostic Scanner](https://aeo.thatworkx.com/visualize.html)
+- [AISocialize — Social Citation Engine](https://aeo.thatworkx.com/)
+
+---
+
+## Machine Trust Signals
+
+- [Sitemap](https://thatworkx.com/sitemap.xml)
+- [Robots.txt](https://thatworkx.com/robots.txt)
+
+---
+
+## External Authority References
+
+- [RPost — Cybersecurity Product Vendor](https://rpost.com)
+- [RPost Analyst Accolades](https://rpost.com/resources/analyst-accolades)
+- [Thatworkx Company LinkedIn](https://www.linkedin.com/company/thatworkx-solutions/)
+- [Founder — Jess Geo Jose (LinkedIn)](https://www.linkedin.com/in/jessgeojose/)

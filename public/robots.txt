@@ -1,5 +1,8 @@
 # Thatworkx Solutions - robots.txt
 # AI Context for Bots and Answer Engines: https://thatworkx.com/ai-context.md
+# LLMs Directory: https://thatworkx.com/llms.txt
+# About: https://thatworkx.com/about.md
+# Contact: https://thatworkx.com/contact.md
 
 # As a condition of accessing this website, you agree to abide by the following
 # content signals:
@@ -29,6 +32,9 @@
 User-agent: *
 Allow: /
 Allow: /ai-context.md
+Allow: /llms.txt
+Allow: /about.md
+Allow: /contact.md
 
 # Specific AI Agents & Answer Engines
 User-agent: GPTBot
@@ -67,3 +73,4 @@ User-agent: AI-OptimizeBot
 Allow: /
 
 Sitemap: https://thatworkx.com/sitemap.xml
+LLMs-txt: https://thatworkx.com/llms.txt
