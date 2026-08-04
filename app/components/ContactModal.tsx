@@ -60,11 +60,7 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
         { name: 'lead_interest', value: data.lead_interest }
       ]
       
-      console.log('=== HUBSPOT_SUBMISSION_DEBUG ===')
-      console.log('Lead Interest:', leadInterest)
-      console.log('Fields being submitted:', fieldsToSubmit)
-      console.log('Fields with values:', fieldsToSubmit.filter(f => f.value))
-      console.log('Empty fields:', fieldsToSubmit.filter(f => !f.value))
+
 
       const response = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID}/${process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID}`,
@@ -84,7 +80,7 @@ export default function ContactModal({ isOpen, onClose, leadInterest, productNam
       )
 
       if (response.ok) {
-        console.log('✅ HubSpot submission successful')
+        console.debug('HubSpot submission successful')
         setIsSuccess(true)
         
         // Download PDF if AEO-Whitepaper
