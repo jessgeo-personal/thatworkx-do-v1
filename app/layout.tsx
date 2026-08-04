@@ -104,29 +104,44 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
+              '@id': 'https://thatworkx.com/#organization',
               name: 'Thatworkx Solutions',
+              legalName: 'Thatworkx Solutions L.L.C-FZ',
+              foundingDate: '2025',
               url: 'https://thatworkx.com',
               logo: 'https://thatworkx.com/logo.png',
-              description: 'Official RPost reseller for UAE, Middle East & Africa. Providing AEO tools, email security, e-signatures, and custom software development.',
+              description: 'Official exclusive RPost reseller for the Middle East and Africa. Providing AEO tools, email security, e-signatures, and cryptocurrency portfolio management.',
               address: {
                 '@type': 'PostalAddress',
+                streetAddress: 'PO Box 2679',
                 addressLocality: 'Dubai',
                 addressCountry: 'AE',
+                addressRegion: 'Dubai',
               },
+              openingHours: 'Mo-Sa 09:00-18:00',
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+971-529-342-175',
+                email: 'info@thatworkx.com',
                 contactType: 'Sales',
-                areaServed: ['AE', 'SA', 'EG', 'AE', 'QA', 'KW', 'OM', 'BH'],
+                areaServed: ['AE', 'SA', 'EG', 'QA', 'KW', 'OM', 'BH', 'ZA', 'NG', 'KE'],
                 availableLanguage: ['English', 'Arabic'],
               },
               sameAs: [
                 'https://www.linkedin.com/company/thatworkx-solutions/',
+                'https://www.linkedin.com/in/jessgeojose/',
               ],
+              founder: {
+                '@type': 'Person',
+                name: 'Jess Geo Jose',
+                jobTitle: 'Founder & Managing Director',
+                sameAs: 'https://www.linkedin.com/in/jessgeojose/',
+              },
               serviceArea: {
                 '@type': 'Place',
                 name: 'Middle East and Africa',
               },
+              dateModified: '2026-08-04',
             }),
           }}
         />
@@ -190,6 +205,7 @@ export default function RootLayout({
                   },
                 },
               ],
+              dateModified: '2026-08-04',
             }),
           }}
         />
@@ -235,6 +251,7 @@ export default function RootLayout({
                   },
                 },
               ],
+              dateModified: '2026-08-04',
             }),
           }}
         />
