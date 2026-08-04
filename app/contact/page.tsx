@@ -429,11 +429,11 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold text-brand-black mb-4">Availability</h3>
                 <div className="space-y-2 text-gray-600">
                   <div className="flex justify-between">
-                    <span>Sun - Thu</span>
+                    <span>Mon - Sat</span>
                     <span className="font-medium">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between border-t border-gray-200 pt-2">
-                    <span>Fri - Sat</span>
+                    <span>Sun</span>
                     <span className="font-medium text-brand-red">Closed</span>
                   </div>
                 </div>
