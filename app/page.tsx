@@ -2,7 +2,7 @@ import HomeHeroSlider from './components/HomeHeroSlider'
 import AEOSection from './components/AEOSection'
 import RPostSection from './components/RPostSection'
 import CryptoMonkeySection from './components/CryptoMonkeySection'
-import WhyThatworkxSection from './components/WhyThatworkxSection'
+import WhyThatworkxSection from './components/WhyThatworkxSection-new'
 
 export default function Home() {
   const localBusinessSchema = {

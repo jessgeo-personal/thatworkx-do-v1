@@ -141,7 +141,7 @@ export default function AeoBridgeClient() {
 
             {/* Headline */}
             <h1 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-              Educating Brands to be <span className="text-[#9F1239]">AI-Ready</span> and <span className="text-[#B45309]">AIOptimized</span>.
+              Educating Brands to be <span className="text-[#9F1239]">AI-Ready</span> {/* and <span className="text-[#B45309]">AIOptimized</span>.*/}
             </h1>
             <p className="text-lg text-[#bdc1c6] max-w-2xl mx-auto mb-10">
               Discover how LLMs, answer engines, and agentic bots perceive, compress, and cite your digital presence.
