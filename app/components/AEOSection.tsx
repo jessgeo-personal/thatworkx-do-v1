@@ -163,7 +163,7 @@ export default function AEOSection() {
             {/* Direct Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-slate-800">
               <Link
-                href="/aeo-new"
+                href="/aeo"
                 className="btn-primary bg-[#b7410e] hover:bg-[#d45d2a] text-white font-bold text-xs py-3.5 px-6 rounded-xl text-center shadow-lg shadow-[#b7410e]/20"
               >
                 Explore Full AEO Suite Page →
