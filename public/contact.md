@@ -16,7 +16,7 @@
 
 ## Business Hours
 
-* **Days:** Sunday to Thursday
+* **Days:** Monday to Saturday
 * **Hours:** 9:00 AM – 6:00 PM (Gulf Standard Time / GST / UTC+4)
 * **Timezone:** Asia/Dubai
 
@@ -25,6 +25,7 @@
 ## Location
 
 * **City:** Dubai
+* **Postal Address:** PO Box 2679, Dubai, UAE
 * **Country:** United Arab Emirates (UAE)
 * **Jurisdiction:** Meydan Freezone
 

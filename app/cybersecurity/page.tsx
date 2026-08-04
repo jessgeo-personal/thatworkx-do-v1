@@ -158,7 +158,7 @@ export default function CybersecurityPage() {
           </h2>
 
           <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            Working with a global US vendor means delayed middle-of-the-night support and USD billing headaches. Thatworkx is your Dubai-based partner—offering same-timezone support (Sun-Thu GST), local billing in AED or USD, and deep regional compliance expertise across DIFC, ADGM, and KSA NDMO regulations.
+            Working with a global US vendor means delayed middle-of-the-night support and USD billing headaches. Thatworkx is your Dubai-based partner—offering same-timezone support (Mon-Sat GST), local billing in AED or USD, and deep regional compliance expertise across DIFC, ADGM, and KSA NDMO regulations.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 text-left mb-10">

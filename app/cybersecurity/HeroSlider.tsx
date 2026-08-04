@@ -170,7 +170,7 @@ export default function HeroSlider({ openContactModal }: HeroSliderProps) {
               <div className="space-y-2 text-xs md:text-sm text-gray-200 border-t border-white/10 pt-4">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Support Hours:</span>
-                  <span className="font-bold text-white">Sun-Thu, 9AM-6PM GST</span>
+                  <span className="font-bold text-white">Mon-Sat, 9AM-6PM GST</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Compliance:</span>

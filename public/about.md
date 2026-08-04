@@ -9,7 +9,7 @@
 * **Legal Name:** Thatworkx Solutions L.L.C-FZ
 * **Founded:** 2025
 * **Jurisdiction:** Meydan Freezone, Dubai, United Arab Emirates
-* **Headquarters:** Dubai, UAE
+* **Headquarters:** PO Box 2679, Dubai, UAE
 * **Primary Website:** https://thatworkx.com
 * **Company Type:** Free Zone Limited Liability Company (L.L.C-FZ)
 
@@ -87,7 +87,7 @@ A comprehensive cryptocurrency portfolio tracking and management web application
 
 * **Email:** info@thatworkx.com
 * **Phone:** +971 529 342 175
-* **Business Hours:** Sunday–Thursday, 9:00 AM – 6:00 PM GST
+* **Business Hours:** Monday–Saturday, 9:00 AM – 6:00 PM GST
 * **Location:** Dubai, UAE
 * **Contact Form:** https://thatworkx.com/contact
 

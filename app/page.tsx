@@ -69,10 +69,10 @@ export default function Home() {
               📞 <a href="tel:+971529342175" className="hover:text-brand-gold">+971 529 342 175</a>
             </div>
             <div>
-              📍 Dubai, UAE
+              📍 PO Box 2679, Dubai, UAE
             </div>
             <div>
-              🕒 Sun-Thu, 9AM-6PM GST
+              🕒 Mon-Sat, 9AM-6PM GST
             </div>
           </div>
         </div>
