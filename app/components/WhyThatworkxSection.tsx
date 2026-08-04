@@ -2,150 +2,92 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function WhyThatworkxSection() {
-  const services = [
-    {
-      icon: '🔒',
-      title: 'Cybersecurity Solutions',
-      items: [
-        'Email security & registered delivery',
-        'E-signatures & digital contracts',
-        'Document security & DRM',
-        'AI-powered threat detection'
-      ]
-    },
-    {
-      icon: '🤖',
-      title: 'AI Optimization (AEO)',
-      items: [
-        'AI search engine readiness',
-        'Content optimization for AI',
-        'AI discoverability audits',
-        'Enterprise AEO implementation'
-      ]
-    },
-    {
-      icon: '💎',
-      title: 'Digital Asset Management',
-      items: [
-        'Cryptocurrency tracking',
-        'Portfolio management',
-        'Self-custody solutions',
-        'Multi-chain support'
-      ]
-    },
-    {
-      icon: '💼',
-      title: 'Professional Services',
-      items: [
-        'Implementation & integration',
-        'Training & enablement',
-        'Regional compliance consulting',
-        'Ongoing support & maintenance'
-      ]
-    }
-  ]
-
-  const advantages = [
-    'Dubai-based with local presence',
-    'Same-timezone support (Sun-Thu, 9AM-6PM GST)',
-    'Invoice in AED, not USD',
-    'Regional compliance expertise',
-    'Flexible payment terms',
-    'Faster response times',
-    'Understanding of MENA business culture'
+  const coreAdvantages = [
+    'Dubai-based entity with local presence (Meydan Freezone LLC-FZ)',
+    'Same-timezone support (Sun–Thu, GST)',
+    'Invoicing & billing in AED or USD',
+    'Deep MENA regional compliance expertise'
   ]
 
   return (
-    <section id="why-thatworkx" className="section-padding bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container-custom max-w-6xl">
-        {/* Header with Logo */}
-        <div className="mb-12">
-          <Image
-            src="/images/thatworkx-white-logo.svg"
-            alt="Thatworkx Solutions"
-            width={350}
-            height={200}
-            className="mb-6"
-          />
-          <h2 className="text-4xl font-heading font-bold mb-4">
-            Why Choose <span className="text-rpost-red">Thatworkx</span>?
-          </h2>
-        </div>
-
-        {/* About Us */}
-        <div className="bg-white p-8 rounded-lg shadow-md mb-12">
-          <h3 className="text-2xl font-bold mb-6">
-            About Us
-          </h3>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Thatworkx Solutions is a Dubai-based technology company specializing in cybersecurity, AI optimization, and digital asset management. We bridge the gap between enterprise-grade solutions and regional business needs, providing local support, regional compliance expertise, and flexible payment terms.
-            </p>
-            <p>
-              Founded with the vision of making cutting-edge technology accessible to businesses across the Middle East and Africa, we partner with industry leaders like RPost while developing our own innovative products like AIOptimize and CryptoMonkey.
-            </p>
-            <p>
-              Our team understands the unique challenges of doing business in MENA—from regulatory requirements to payment preferences—and we're committed to being your trusted technology partner.
-            </p>
-          </div>
-        </div>
-
-        {/* Our Services */}
-        <div className="mb-12">
-          <h3 className="text-3xl font-bold mb-8 text-center">
-            Our Services
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-rpost-red hover:shadow-lg transition-shadow"
-              >
-                <div className="mb-4">
-                  <h4 className="text-xl font-bold text-gray-900">{service.title}</h4>
-                </div>
-                <ul className="space-y-2">
-                  {service.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start text-gray-700">
-                      <span className="text-rpost-red mr-2 mt-1">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+    <section id="why-thatworkx" className="py-16 bg-slate-900 text-white border-t border-slate-800">
+      <div className="container-custom max-w-6xl mx-auto px-4">
+        <div className="bg-slate-950/80 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Column: Brief Intro & Regional Badges */}
+            <div className="md:col-span-7">
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/images/thatworkx-white-logo.svg"
+                  alt="Thatworkx Solutions"
+                  width={160}
+                  height={50}
+                  className="h-8 w-auto object-contain"
+                />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-gold bg-brand-gold/10 border border-brand-gold/30 px-2.5 py-0.5 rounded">
+                  Dubai, UAE
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Why Choose Thatworkx */}
-        <div className="bg-gradient-to-br from-black to-gray-900 text-white p-8 rounded-lg shadow-xl">
-          <h3 className="text-3xl font-bold mb-6 text-center">
-            Why Choose Thatworkx?
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="flex items-center">
-                <span className="text-brand-gold text-xl mr-3">✓</span>
-                <span>{advantage}</span>
+              <h2 className="text-2xl md:text-4xl font-heading font-extrabold text-white mb-4">
+                Bridging Cutting-Edge Technology &amp; Regional Expertise
+              </h2>
+
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                Thatworkx Solutions L.L.C-FZ is a Dubai-based technology firm bridging advanced cybersecurity, Answer Engine Optimization (AEO), and digital asset management for businesses across the Middle East and Africa.
+              </p>
+
+              {/* Quick Regional Advantage Checklist */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {coreAdvantages.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2 text-xs md:text-sm text-gray-200">
+                    <span className="text-brand-gold font-bold">✓</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <div className="text-center pt-6 border-t border-gray-700">
-            <p className="text-xl mb-6 text-gray-200">
-              Ready to work with a partner who understands your market?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-brand-gold text-black hover:bg-yellow-500">
-                Get in Touch
-              </Link>
-              <a
-                href="mailto:info@thatworkx.com"
-                className="btn-outline border-white text-white hover:bg-white hover:text-black"
-              >
-                Email Us
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/about"
+                  className="btn-primary bg-[#b7410e] hover:bg-[#d45d2a] text-white font-bold text-xs py-3 px-6 rounded-xl shadow-lg shadow-[#b7410e]/20"
+                >
+                  Learn More About Thatworkx →
+                </Link>
+                <Link
+                  href="/contact"
+                  className="btn-outline border-slate-700 text-gray-300 hover:bg-white hover:text-black font-bold text-xs py-3 px-6 rounded-xl"
+                >
+                  Contact Our Dubai Team
+                </Link>
+              </div>
             </div>
+
+            {/* Right Column: Mission Card */}
+            <div className="md:col-span-5 bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center md:text-left">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                Our Core Pillars
+              </span>
+              <ul className="space-y-3 text-xs md:text-sm text-gray-300 mb-6">
+                <li className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <strong className="text-white block font-bold mb-0.5">🔐 RPost Cybersecurity</strong>
+                  Exclusive regional reseller for RMail, RSign, RDocs, and RaptorAI.
+                </li>
+                <li className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <strong className="text-white block font-bold mb-0.5">🤖 Thatworkx AEO Suite</strong>
+                  Generative Engine Optimization with AI Visualize, AIOptimize, and AISocialize.
+                </li>
+                <li className="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                  <strong className="text-white block font-bold mb-0.5">💎 Cryptomonkey</strong>
+                  Self-custody multi-chain portfolio tracking for digital assets.
+                </li>
+              </ul>
+              <p className="text-xs text-gray-400 italic">
+                Registered in Meydan Freezone, Dubai, UAE.
+              </p>
+            </div>
+
           </div>
         </div>
       </div>

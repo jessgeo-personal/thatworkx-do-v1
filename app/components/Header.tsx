@@ -32,18 +32,12 @@ export default function Header() {
             <Link href="/aeo" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
             </Link>
+            <Link href="/about" className="text-brand-black hover:text-brand-red transition-colors font-medium">
+              About Us
+            </Link>
             <Link href="/contact" className="text-brand-black hover:text-brand-red transition-colors font-medium">
               Contact Us
             </Link>
-            <button 
-              onClick={() => {
-                window.location.href = '/#partner'
-                // Or trigger partner modal
-              }}
-              className="text-brand-black hover:text-brand-red transition-colors font-medium"
-            >
-              Partner With Us
-            </button>
             <Link href="/aeo" className="btn-primary">
               Try Free AEO Audit
             </Link>
@@ -76,6 +70,9 @@ export default function Header() {
             </Link>
             <Link href="/aeo" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               AEO Tools
+            </Link>
+            <Link href="/about" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
+              About Us
             </Link>
             <Link href="/contact" className="block text-brand-black hover:text-brand-red transition-colors font-medium">
               Contact Us

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const BETA_API_ENDPOINT = 'https://aeo.thatworkx.com/api/beta-signup'
 
@@ -133,6 +134,18 @@ export default function AeoBridgeClient() {
         <section className="bg-[#08090C] border border-white/5 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
           <div className="max-w-4xl mx-auto">
             
+            {/* AI@thatworkx Master Umbrella Brand Logo */}
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/images/ai-thatworkx-logo.png"
+                alt="AI@thatworkx"
+                width={320}
+                height={90}
+                className="h-12 md:h-16 w-auto object-contain drop-shadow-lg"
+                priority
+              />
+            </div>
+
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1f1f1f] border border-white/10 text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-6">
               <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>

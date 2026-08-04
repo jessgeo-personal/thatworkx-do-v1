@@ -3,28 +3,29 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 interface HeroSliderProps {
-  openContactModal: (leadInterest: 'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me' | 'General-Contact-Me', productName: string) => void
+  openContactModal: (
+    leadInterest: 'Rmail-Contact-Me' | 'Rsign-Contact-Me' | 'RDocs-Contact-Me' | 'Raptor-Contact-Me' | 'General-Contact-Me',
+    productName: string
+  ) => void
 }
 
 export default function HeroSlider({ openContactModal }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const slides = [
-      {
+    {
       id: 'rpost',
       logo: '/images/rpost/rpost-logo.png',
-      title: '',
-      tagline: 'RPost™ is the gold standard for powerful email, document and form security, compliance, workplace acceleration and eSignatures, since 2000.',
+      title: 'Enterprise Email Security & Delivery',
+      tagline: 'Track, Prove, eSign, Encrypt, Share, Certify & Control — All-in-One',
       features: [
-        'track, prove, eSign, encrypt, share, certify, control -- all-in-one.',
-        'Trusted in 193 countries since 2000',
-        '25+ million users worldwide',
-        'Named by Analysts a Worldwide Leader & Visionary'
+        'Court-admissible proof of delivery in 193 countries since 2000',
+        'Over 25 million active users worldwide',
+        '70+ patents with GDPR & HIPAA legal compliance',
+        'Named by industry analysts as a worldwide leader and visionary'
       ],
       cta1: 'Book 30-Min Demo',
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
-      cta2: 'Download Brochure',
-      cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
       leadInterest: 'General-Contact-Me' as const,
       productName: 'RPost Security',
       bgColor: 'bg-black'
@@ -33,443 +34,177 @@ export default function HeroSlider({ openContactModal }: HeroSliderProps) {
       id: 'rmail',
       logo: '/images/rpost/rmail-logo.png',
       title: 'Registered Email™',
-      tagline: 'Court-Admissible Proof of E-Delivery',
+      tagline: 'Court-Admissible Proof of E-Delivery & Message Privacy',
       features: [
-        'Trusted in 193 countries since 2000',
-        '25+ million users worldwide',
-        'GDPR & HIPAA compliant',
-        '70+ patents - most in the industry'
-      ],
-      badge: {
-        title: 'Gartner',
-        subtitle: 'Leader in Email Security',
-        rating: '⭐⭐⭐⭐⭐ 4.5/5 on G2',
-        ratingText: 'Easiest to Use Email Security'
-      },
-      integrations: [
-        'Microsoft 365 & Outlook',
-        'Google Workspace',
-        'Salesforce, SAP, Oracle',
-        'Zapier, Power Automate'
+        'Cryptographic proof of email delivery, content, and time',
+        'End-to-end message encryption with zero recipient friction',
+        'Single-click Outlook and Gmail integrations',
+        'GDPR, HIPAA, and regional MENA compliance'
       ],
       cta1: 'Book 30-Min Demo',
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
-      cta2: 'Download Brochure',
-      cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
       leadInterest: 'Rmail-Contact-Me' as const,
-      productName: 'RMail',
+      productName: 'RMail™',
       bgColor: 'bg-black'
     },
     {
       id: 'rsign',
       logo: '/images/rpost/rsign-logo.png',
       title: 'E-Signatures Made Simple',
-      tagline: '72% More Affordable Than DocuSign Standard',
+      tagline: 'Up to 72% More Affordable Than DocuSign Standard',
       features: [
-        'Unlimited templates included',
-        'No per-envelope fees',
-        'Drag-and-drop signature builder',
-        'Mobile-friendly signing'
-      ],
-      badge: {
-        title: 'TrustRadius',
-        subtitle: 'Best Value for Money',
-        rating: '⭐⭐⭐⭐⭐ 4.8/5',
-        ratingText: 'Better than DocuSign for SMBs'
-      },
-      integrations: [
-        'Microsoft Outlook',
-        'Applied Epic (Insurance)',
-        'Salesforce, HubSpot, Zoho',
-        'Contract Management Systems'
+        'Unlimited web forms and signing templates included',
+        'No per-envelope fees or hidden volume penalties',
+        'Drag-and-drop template builder with multi-party routing',
+        'Full legal audit trail with verification timestamps'
       ],
       cta1: 'Book 30-Min Demo',
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
-      cta2: 'Download Brochure',
-      cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
       leadInterest: 'Rsign-Contact-Me' as const,
-      productName: 'RSign',
+      productName: 'RSign™',
       bgColor: 'bg-black'
     },
     {
       id: 'rdocs',
       logo: '/images/rpost/rdocs-logo.png',
       title: 'Document Control After Send',
-      tagline: 'Kill Documents Remotely - Industry First',
+      tagline: 'Kill Documents Remotely — Industry First',
       features: [
-        'Remote document kill switch (patent-protected)',
-        'Track who opens your documents',
-        'Set expiration dates automatically',
-        'No reader software required'
-      ],
-      badge: {
-        title: '🎖️ Patent-Protected',
-        subtitle: 'Industry First: Remote Kill Switch',
-        rating: '🔒 Fortune 500 Trusted',
-        ratingText: 'Enterprise-grade security'
-      },
-      integrations: [
-        'Microsoft SharePoint & OneDrive',
-        'Google Drive, Dropbox, Box',
-        'Document Management Systems',
-        'Enterprise Content Management'
+        'Patented remote document kill switch to revoke access anytime',
+        'Real-time engagement analytics and page view tracking',
+        'Automatic expiration dates & copy/print restrictions',
+        'No special reader software required for recipients'
       ],
       cta1: 'Book 30-Min Demo',
       cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
-      cta2: 'Download Brochure',
-      cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
       leadInterest: 'RDocs-Contact-Me' as const,
-      productName: 'RDocs',
+      productName: 'RDocs™',
       bgColor: 'bg-black'
     },
     {
       id: 'raptorai',
       logo: '/images/rpost/raptorai-logo.png',
-      title: 'PRE-Crime™ Cybersecurity',
-      tagline: 'Stop Threats Before They Happen',
+      title: 'PRE-Crime™ Security Engine',
+      tagline: 'Stop Email Threats Before They Happen',
       features: [
-        'AI-powered phishing prevention',
-        'Detects threats in 3rd-party networks',
-        'Protects against employee risk (weakest link)',
-        'Data loss prevention (DLP)'
-      ],
-      badge: {
-        title: '🛡️ Cybersecurity Innovation',
-        subtitle: 'Next-Gen Threat Detection',
-        rating: '🏅 RSA Conference Featured',
-        ratingText: 'Breakthrough Security Technology'
-      },
-      integrations: [
-        'Microsoft Defender & Sentinel',
-        'SIEM (Splunk, LogRhythm)',
-        'All major email gateways',
-        'Security Operations Centers'
+        'AI-powered threat detection during cyber criminal reconnaissance',
+        'Scans 3rd-party vendor networks for compromised accounts',
+        'Protects employees against targeted BEC & phishing attacks',
+        'Preemptive outbound Data Loss Prevention (DLP)'
       ],
       cta1: 'Contact Sales',
       cta1Link: '/contact',
-      cta2: 'Download Brochure',
-      cta2Link: '/pdfs/Thatworkx-Rpost-Brochure-v3.pdf',
       leadInterest: 'Raptor-Contact-Me' as const,
       productName: 'Raptor™AI',
-      bgColor: 'bg-gradient-to-br from-rpost-darkRed to-rpost-red'
-    },
-    {
-      id: 'thatworkx',
-      logo: '/images/thatworkx-rpost-reseller-logo.png', // NEW LOGO
-      title: 'Your Local RPost Partner',
-      tagline: 'Enterprise Security with Local Support',
-      description: "We're not just a reseller—we're your regional cybersecurity partner, committed to making enterprise-grade email and document security accessible and affordable across MENA.",
-      benefits: [
-        'Dubai-based with local presence',
-        'Invoice in AED, not USD',
-        'Same-timezone support (Sun-Thu, 9AM-6PM GST)',
-        'Regional compliance expertise (DIFC, ADGM, KSA)',
-        'Professional services & implementation',
-        'Flexible payment terms',
-        'Faster response times'
-      ],
-      finalMessage: 'When you work with Thatworkx, you\'re partnering with a team that understands your market, speaks your business language, and is invested in your success.',
-      cta1: 'Book Demo with Thatworkx',
-      cta1Link: 'https://outlook.office.com/book/ThatworkxSolutions@thatworkx.com/s/D8NYhe4xREemf1Gd3DLsYg2?ismsaljsauthenabled',
-      cta2: 'Contact Sales',
-      cta2Link: '/contact',
-      leadInterest: 'General-Contact-Me' as const,
-      productName: 'RPost Security',
-      bgColor: 'bg-black'
+      bgColor: 'bg-gradient-to-br from-rpost-darkRed via-black to-rpost-red'
     }
   ]
 
-  // Auto-play functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000) // 5 seconds per slide
+    }, 6000)
     return () => clearInterval(interval)
   }, [slides.length])
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
-
-  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, leadInterest?: any, productName?: string) => {
-    if (href === '/contact') {
-      e.preventDefault()
-      openContactModal(leadInterest || 'General-Contact-Me', productName || 'RPost Security')
-    }
-  }
-
-  const currentSlideData = slides[currentSlide]
+  const current = slides[currentSlide]
 
   return (
-    <section className={`${currentSlideData.bgColor} text-white py-12 md:py-20 relative overflow-hidden min-h-[600px] md:min-h-[500px]`}>
-      <div className="container-custom">
-        {currentSlideData.id !== 'thatworkx' ? (
-          <>
-            {/* Product Slides - Desktop 2 Column Layout */}
-            <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
-              {/* LEFT COLUMN - Logo, Title, Features */}
-              <div>
-                <div className="mb-6">
-                  <Image
-                    src={currentSlideData.logo}
-                    alt={currentSlideData.title}
-                    width={200}
-                    height={80}
-                    className="mb-4"
-                  />
-                  <h2 className="text-3xl lg:text-4xl font-bold mb-2">{currentSlideData.title}</h2>
-                  <p className="text-2xl font-bold text-brand-gold">
-                    "{currentSlideData.tagline}"
-                  </p>
-                </div>
-
-                <div className="space-y-3">
-                  {currentSlideData.features?.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <span className="text-brand-gold text-xl mr-2">✓</span>
-                      <span className="text-base">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN - Badge, Integrations, CTAs */}
-              <div className="space-y-6">
-                {/* Badge */}
-                {currentSlideData.badge && (
-                  <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
-                    <div className="text-lg font-bold mb-2">{currentSlideData.badge.title}</div>
-                    <div className="text-sm mb-3">{currentSlideData.badge.subtitle}</div>
-                    <div className="text-xl mb-1">{currentSlideData.badge.rating}</div>
-                    <div className="text-sm text-gray-300">{currentSlideData.badge.ratingText}</div>
-                  </div>
-                )}
-
-                {/* Integrations */}
-                {currentSlideData.integrations && (
-                  <div>
-                    <div className="text-sm font-bold mb-3">INTEGRATES WITH:</div>
-                    <div className="grid grid-cols-2 gap-2 text-sm text-gray-300">
-                      {currentSlideData.integrations.map((integration, index) => (
-                        <div key={index} className="flex items-start">
-                          <span className="mr-1">•</span>
-                          <span>{integration}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* CTAs */}
-                <div className="flex flex-col gap-3">
-                  <a
-                    href={currentSlideData.cta1Link}
-                    target={currentSlideData.cta1Link.startsWith('http') ? "_blank" : undefined}
-                    rel={currentSlideData.cta1Link.startsWith('http') ? "noopener noreferrer" : undefined}
-                    onClick={(e) => handleCtaClick(e, currentSlideData.cta1Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
-                    className="btn-primary bg-white text-rpost-red hover:bg-gray-100 text-center"
-                  >
-                    {currentSlideData.cta1}
-                  </a>
-
-                  {currentSlideData.cta1 !== 'Contact Sales' && currentSlideData.cta2 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
-                    <button
-                      onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
-                      className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
-                    >
-                      Contact Sales
-                    </button>
-                  )}
-
-                  <a
-                    href={currentSlideData.cta2Link}
-                    onClick={(e) => handleCtaClick(e, currentSlideData.cta2Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
-                    className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
-                  >
-                    {currentSlideData.cta2}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile - Simplified Single Column */}
-            <div className="md:hidden text-center">
-              <div className="mb-6">
-                <Image
-                  src={currentSlideData.logo}
-                  alt={currentSlideData.title}
-                  width={160}
-                  height={64}
-                  className="mx-auto mb-4"
-                />
-                <h2 className="text-2xl font-bold mb-2">{currentSlideData.title}</h2>
-                <p className="text-lg font-bold text-brand-gold">
-                  "{currentSlideData.tagline}"
-                </p>
-              </div>
-
-              {/* Key Features - Just 2 on mobile */}
-              <div className="space-y-2 mb-6 text-left max-w-sm mx-auto">
-                {currentSlideData.features?.slice(0, 2).map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    <span className="text-brand-gold text-lg mr-2">✓</span>
-                    <span className="text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col gap-3 max-w-sm mx-auto">
-                <a
-                  href={currentSlideData.cta1Link}
-                  target={currentSlideData.cta1Link.startsWith('http') ? "_blank" : undefined}
-                  rel={currentSlideData.cta1Link.startsWith('http') ? "noopener noreferrer" : undefined}
-                  onClick={(e) => handleCtaClick(e, currentSlideData.cta1Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
-                  className="btn-primary bg-white text-rpost-red hover:bg-gray-100"
-                >
-                  {currentSlideData.cta1}
-                </a>
-
-                {currentSlideData.cta1 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
-                  <button
-                    onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
-                    className="btn-outline border-white text-white hover:bg-white hover:text-rpost-red text-center"
-                  >
-                    Contact Sales
-                  </button>
-                )}
-              </div>
-            </div>
-          </>
-        ) : (
-          <>
-            {/* Thatworkx Slide - Desktop 2 Column */}
-            <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
-              {/* LEFT COLUMN */}
-              <div>
-                <div className="mb-6">
-                  <Image
-                    src={currentSlideData.logo}
-                    alt="Thatworkx Solutions - Official RPost Reseller"
-                    width={300}
-                    height={100}
-                    className="mb-4"
-                  />
-                  <h2 className="text-3xl lg:text-4xl font-bold mb-2">{currentSlideData.title}</h2>
-                  <p className="text-2xl font-bold text-brand-gold mb-4">
-                    {currentSlideData.tagline}
-                  </p>
-                  <p className="text-base text-gray-200">
-                    {currentSlideData.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT COLUMN */}
-              <div className="space-y-6">
-                <div className="text-lg font-bold mb-4">WHY THATWORKX?</div>
-                <div className="space-y-2">
-                  {currentSlideData.benefits?.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
-                      <span className="text-brand-gold text-lg mr-2">✓</span>
-                      <span className="text-sm">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="text-sm text-gray-200 italic mt-6">
-                  {currentSlideData.finalMessage}
-                </p>
-
-                {/* CTAs */}
-                <div className="flex flex-col gap-3">
-                  <a
-                    href={currentSlideData.cta1Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary bg-brand-gold text-black hover:bg-yellow-500 text-center"
-                  >
-                    {currentSlideData.cta1}
-                  </a>
-                  <a
-                    href={currentSlideData.cta2Link}
-                    onClick={(e) => handleCtaClick(e, currentSlideData.cta2Link, (currentSlideData as any).leadInterest, (currentSlideData as any).productName)}
-                    className="btn-outline border-white text-white hover:bg-white hover:text-black text-center"
-                  >
-                    {currentSlideData.cta2}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile - Simplified */}
-            <div className="md:hidden text-center">
-              <Image
-                src={currentSlideData.logo}
-                alt="Thatworkx Solutions - Official RPost Reseller"
-                width={240}
-                height={80}
-                className="mx-auto mb-4"
-              />
-              <h2 className="text-2xl font-bold mb-2">{currentSlideData.title}</h2>
-              <p className="text-lg font-bold text-brand-gold mb-4">
-                {currentSlideData.tagline}
-              </p>
-              
-              {/* Just 3 key benefits on mobile */}
-              <div className="space-y-2 mb-6 text-left max-w-sm mx-auto">
-                {currentSlideData.benefits?.slice(0, 3).map((benefit, index) => (
-                  <div key={index} className="flex items-start">
-                    <span className="text-brand-gold text-lg mr-2">✓</span>
-                    <span className="text-sm">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col gap-3 max-w-sm mx-auto">
-                <a
-                  href={currentSlideData.cta1Link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary bg-brand-gold text-black hover:bg-yellow-500"
-                >
-                  {currentSlideData.cta1}
-                </a>
-
-                {currentSlideData.cta1 !== 'Contact Sales' && (currentSlideData as any).leadInterest && (
-                  <button
-                    onClick={() => openContactModal((currentSlideData as any).leadInterest as any, currentSlideData.productName || 'RPost Security')}
-                    className="btn-outline border-white text-white hover:bg-white hover:text-brand-gold text-center"
-                  >
-                    Contact Sales
-                  </button>
-                )}
-              </div>
-            </div>
-          </>
-        )}
-
-        {/* Navigation Dots - Bottom Left */}
-        <div className="absolute bottom-8 left-8 flex gap-2">
-          {slides.map((_, index) => (
+    <section className={`${current.bgColor} text-white py-14 md:py-20 relative overflow-hidden border-b-4 border-rpost-red min-h-[550px]`}>
+      <div className="container-custom max-w-6xl mx-auto px-4">
+        
+        {/* Slide Tab Buttons */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {slides.map((s, idx) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide 
-                  ? 'bg-brand-gold w-8' 
-                  : 'bg-white bg-opacity-30 hover:bg-opacity-50'
+              key={s.id}
+              onClick={() => setCurrentSlide(idx)}
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                idx === currentSlide
+                  ? 'bg-rpost-red text-white shadow-lg'
+                  : 'bg-gray-900/80 text-gray-300 hover:bg-gray-800 border border-gray-800'
               }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              {s.productName}
+            </button>
           ))}
         </div>
 
-        {/* Official Reseller Badge - Bottom Right */}
-        <div className="absolute bottom-8 right-8 text-right text-xs text-gray-300">
-          Official RPost Reseller<br />UAE, Middle East & Africa
+        {/* Content Box */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="mb-6">
+              {/* Increased Logo Size */}
+              <Image
+                src={current.logo}
+                alt={current.title}
+                width={280}
+                height={100}
+                className="mb-4 h-16 md:h-20 w-auto object-contain"
+              />
+              <h2 className="text-3xl lg:text-4xl font-heading font-extrabold mb-2">{current.title}</h2>
+              <p className="text-xl md:text-2xl font-bold text-brand-gold">
+                "{current.tagline}"
+              </p>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              {current.features.map((feat, idx) => (
+                <div key={idx} className="flex items-start">
+                  <span className="text-brand-gold text-xl mr-3 font-bold">✓</span>
+                  <span className="text-sm md:text-base text-gray-200">{feat}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-8 rounded-2xl flex flex-col justify-between shadow-2xl">
+            <div className="mb-6">
+              <span className="text-xs font-bold text-brand-gold uppercase tracking-wider block mb-2">
+                Official RPost™ Regional Partner
+              </span>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                Thatworkx Solutions provides direct local support, technical integration, and billing in AED or USD across the Middle East &amp; Africa.
+              </p>
+
+              <div className="space-y-2 text-xs md:text-sm text-gray-200 border-t border-white/10 pt-4">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Support Hours:</span>
+                  <span className="font-bold text-white">Sun-Thu, 9AM-6PM GST</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Compliance:</span>
+                  <span className="font-bold text-white">DIFC, ADGM &amp; KSA NDMO</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Significantly Larger CTA Buttons */}
+            <div className="flex flex-col gap-4">
+              <a
+                href={current.cta1Link}
+                target={current.cta1Link.startsWith('http') ? "_blank" : undefined}
+                rel={current.cta1Link.startsWith('http') ? "noopener noreferrer" : undefined}
+                onClick={(e) => {
+                  if (current.cta1Link === '/contact') {
+                    e.preventDefault()
+                    openContactModal(current.leadInterest, current.productName)
+                  }
+                }}
+                className="btn-primary bg-rpost-red text-white hover:bg-red-700 text-center font-extrabold text-base md:text-lg py-4 px-6 rounded-xl shadow-xl transition-all"
+              >
+                {current.cta1} →
+              </a>
+              <button
+                onClick={() => openContactModal(current.leadInterest, current.productName)}
+                className="btn-outline border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black font-extrabold text-base md:text-lg py-4 px-6 rounded-xl text-center transition-all"
+              >
+                Contact Regional Sales
+              </button>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   )

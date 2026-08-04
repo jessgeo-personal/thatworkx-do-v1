@@ -13,7 +13,7 @@ export default function AEOSection() {
       "name": "Thatworkx Solutions L.L.C-FZ"
     },
     "description": "Comprehensive Answer Engine Optimization (AEO) suite featuring AI Visualize, AIOptimize, and AISocialize.",
-    "url": "https://thatworkx.com/aeo-new",
+    "url": "https://thatworkx.com/aeo",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "USD",
@@ -34,8 +34,29 @@ export default function AEOSection() {
 
       <div className="container-custom max-w-6xl mx-auto px-4 relative z-10">
         
+        {/* Top Header with Master AI@thatworkx Umbrella Logo */}
+        <div className="mb-12 pb-8 border-b border-slate-800/80">
+          <div className="flex flex-wrap items-center gap-4 mb-4">
+            <Image
+              src="/images/ai-thatworkx-logo.png"
+              alt="AI@thatworkx"
+              width={280}
+              height={80}
+              className="h-10 md:h-14 w-auto object-contain drop-shadow-md"
+              priority
+            />
+            <span className="inline-block text-xs font-mono font-bold uppercase tracking-widest text-[#f59e0b] bg-[#f59e0b]/10 border border-[#f59e0b]/30 px-3 py-1 rounded-full">
+              The 3-Pillar Solution to AI-Readiness
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white tracking-tight max-w-4xl">
+            Visualize, Optimize and Socialize for AI. <span className="text-[#f59e0b]">Don't let AI-engines ignore you.</span>
+          </h2>
+        </div>
+
         {/* Top Header & Logo Strip */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 pb-8 border-b border-slate-800/80">
+        {/* <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 pb-8 border-b border-slate-800/80">
           <div>
             <span className="inline-block text-xs font-mono font-bold uppercase tracking-widest text-[#f59e0b] mb-2">
               The 3-Pillar Solution to AI-Readiness
@@ -44,62 +65,7 @@ export default function AEOSection() {
               Visualize, Optimize and Socialize for AI. <span className="text-[#f59e0b]">Don't let AI-engines ignore you.</span>
             </h2>
           </div>
-
-          {/* 3 Product Logos Strip - Cleanly Positioned on Next Line 
-          <div className="flex flex-wrap items-center gap-6 bg-slate-900/80 p-3 px-5 rounded-2xl border border-slate-800 w-fit">
-            <Image
-              src="/images/aivisualize-logo.png"
-              alt="AI Visualize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <span className="text-slate-700">|</span>
-            <Image
-              src="/images/aioptimize-logo.svg"
-              alt="AIOptimize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <span className="text-slate-700">|</span>
-            <Image
-              src="/images/aisocialize-logo.png"
-              alt="AISocialize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-          </div>
         </div>*/}
-
-          {/* 3 Product Logos Strip 
-          <div className="flex items-center gap-6 bg-slate-900/80 p-3 px-5 rounded-2xl border border-slate-800">
-            <Image
-              src="/images/aivisualize-logo.png"
-              alt="AI Visualize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <span className="text-slate-700">|</span>
-            <Image
-              src="/images/aioptimize-logo.svg"
-              alt="AIOptimize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-            <span className="text-slate-700">|</span>
-            <Image
-              src="/images/aisocialize-logo.png"
-              alt="AISocialize"
-              width={110}
-              height={28}
-              className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-            />
-          </div>*/}
-        </div>
 
         {/* 2-Column Grid */}
         <div className="grid md:grid-cols-12 gap-8 items-stretch">
